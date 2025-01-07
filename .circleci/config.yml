@@ -8,10 +8,7 @@ jobs:
       - checkout  
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt  
-      - run:
-          name: Run Python Analysis
-          command: Graphs/Python_Analysis.py  
+          command: pip install -r requirements.txt   
       - run:
           name: Run unit tests
           command: pytest  
