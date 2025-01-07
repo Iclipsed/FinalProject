@@ -9,6 +9,12 @@ jobs:
       - run:
           name: Install dependencies
           command: pip install -r requirements.txt  
+      - run:
+          name: Run Python Analysis
+          command: Python_Analysis.py  
+      - run:
+          name: Run unit tests
+          command: pytest  
 
 workflows:
   version: 2
