@@ -1,6 +1,9 @@
 import os
 import pandas as pd
 
+data = pd.read_csv("Dataset/2019.csv")
+print(data.head(5))
+
 def test_exists():
     # See if the dataset exists in the repo
     assert os.path.exists('Dataset/2019.csv'), "The dataset file must be missing."
