@@ -37,3 +37,12 @@ plt.show()
 
 # https://matplotlib.org/stable/users/explain/colors/colormaps.html
 # https://seaborn.pydata.org/generated/seaborn.heatmap.html
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='GDP_per_Capita', y='Happiness_Score', data= data)
+sns.regplot(x='GDP_per_Capita', y='Happiness_Score', data= data, scatter=False, color='red')
+plt.title('Happiness Score vs. GDP per Capita')
+plt.text(0.9, 1.5,'Figure 3: Scatterplot with regression line showing the relationship between GDP per capita and happiness scores', fontsize=12, ha='center')
+plt.xlabel('GDP per Capita')
+plt.ylabel('Happiness Score')
+plt.show()
