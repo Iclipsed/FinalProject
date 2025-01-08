@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -37,3 +38,23 @@ plt.show()
 
 # https://matplotlib.org/stable/users/explain/colors/colormaps.html
 # https://seaborn.pydata.org/generated/seaborn.heatmap.html
+
+
+
+def test_correlation_heatmap():
+    
+
+    # Compute correlation matrix
+    correlation_matrix = data[columns].corr()
+
+    # Assert the correlation matrix dimensions are correct
+    assert correlation_matrix.shape == (7, 7), "Correlation matrix dimensions are incorrect"
+
+    # Assert that all columns are in the correlation matrix
+    for col in columns:
+        assert col in correlation_matrix.columns, f"Column {col} is missing in the correlation matrix"
+
+    # Assert heatmap title
+    plt.title('Correlation Heatmap: Happiness and Predictors')
+    title = plt.gca().title.get_text()
+    assert title == 'Correlation Heatmap: Happiness and Predictors', "Heatmap title is incorrect"
