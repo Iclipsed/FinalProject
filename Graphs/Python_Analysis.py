@@ -72,3 +72,28 @@ plt.ylabel('Residuals')
 plt.text(5, -3.5, 'Figure 7: Residuals from the linear regression model for GDP and Happiness Scores', fontsize=12, ha='center')
 plt.legend()
 plt.show()
+
+
+from scipy.stats import ttest_ind
+
+
+# Group countries by GDP per capita (high vs. low based on median GDP)
+median_gdp = data['GDP_per_Capita'].median()
+high_gdp = data[data['GDP_per_Capita'] >= median_gdp]['Happiness_Score']
+low_gdp = data[data['GDP_per_Capita'] < median_gdp]['Happiness_Score']
+
+# Perform the t-test
+t_stat, p_value = ttest_ind(high_gdp, low_gdp)
+
+# Display results
+print(f"T-Statistic: {t_stat}")
+print(f"P-Value: {p_value}")
+
+# Interpretation
+if p_value < 0.05:
+    print("The difference in happiness scores between high and low GDP groups is statistically significant.")
+else:
+    print("No significant difference in happiness scores between high and low GDP groups.")
+
+
+# Reference: https://neuraldatascience.io/5-eda/ttests.html
