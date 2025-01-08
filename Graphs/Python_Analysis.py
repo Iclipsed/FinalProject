@@ -46,3 +46,29 @@ plt.text(0.9, 1.5,'Figure 3: Scatterplot with regression line showing the relati
 plt.xlabel('GDP per Capita')
 plt.ylabel('Happiness Score')
 plt.show()
+
+from sklearn.linear_model import LinearRegression
+# Reference: https://www.geeksforgeeks.org/python-linear-regression-using-sklearn/
+
+x = data['GDP_per_Capita'].values.reshape(-1, 1)  
+y = data['Happiness_Score'].values  
+
+# Fit a linear regression model
+model = LinearRegression()
+model.fit(x, y)
+
+# Predict values
+y_pred = model.predict(x)
+residuals = y - y_pred
+
+# Reference https://stackoverflow.com/questions/62646058/how-does-the-predict-method-work-on-scikit-learn#:~:text=predict()%20must%20follow%20fit,new%20inputs%20to%20their%20labels.
+
+plt.figure(figsize=(10, 6))
+plt.scatter(y_pred, residuals, alpha=0.6, label='Residuals')
+plt.axhline(y=0, color='red', linestyle='--', label='Zero Residual Line')
+plt.title('Residual Plot: Happiness Score vs. GDP per Capita')
+plt.xlabel('Predicted Happiness Score')
+plt.ylabel('Residuals')
+plt.text(5, -3.5, 'Figure 7: Residuals from the linear regression model for GDP and Happiness Scores', fontsize=12, ha='center')
+plt.legend()
+plt.show()
