@@ -97,3 +97,39 @@ else:
 
 
 # Reference: https://neuraldatascience.io/5-eda/ttests.html
+
+# Extend the continent mapping to include Asian countries and others
+continent_map = {
+    'Finland': 'Europe', 'Denmark': 'Europe', 'Norway': 'Europe', 'Iceland': 'Europe',
+    'Netherlands': 'Europe', 'Switzerland': 'Europe', 'Sweden': 'Europe', 'New Zealand': 'Oceania',
+    'Canada': 'North America', 'Australia': 'Oceania', 'United States': 'North America',
+    'India': 'Asia', 'China': 'Asia', 'Japan': 'Asia', 'South Korea': 'Asia', 'Indonesia': 'Asia',
+    'Saudi Arabia': 'Asia', 'Turkey': 'Asia', 'Israel': 'Asia', 'Singapore': 'Asia', 'Malaysia': 'Asia',
+    'Vietnam': 'Asia', 'Thailand': 'Asia', 'Philippines': 'Asia',
+    'Brazil': 'South America', 'Argentina': 'South America', 'Colombia': 'South America',
+    'Mexico': 'North America', 'Chile': 'South America', 'Peru': 'South America',
+    'South Africa': 'Africa', 'Nigeria': 'Africa', 'Egypt': 'Africa', 'Kenya': 'Africa'
+}
+
+
+# Map countries to continents again
+data['Continent'] = data['Countries'].map(continent_map)
+
+# Filter out countries without continent mapping
+data_with_continents = data.dropna(subset=['Continent'])
+
+# Calculate average happiness scores by continent
+continent_happiness = data_with_continents.groupby('Continent')['Happiness_Score'].mean().sort_values()
+
+# Plot the results again
+plt.figure(figsize=(8, 5))
+continent_happiness.plot(kind='bar', color='skyblue', edgecolor='black', alpha=0.7)
+plt.title("Average Happiness Scores by Continent", fontsize=16)
+plt.ylabel("Average Happiness Score")
+plt.xlabel("Continent")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.text(2, -3,'Figure 6: Bar Graph showing differences in happiness score across different continents', fontsize=10, ha='center')
+plt.xticks(rotation=45)
+plt.show()
+
+#https://stackoverflow.com/questions/66557543/valueerror-mime-type-rendering-requires-nbformat-4-2-0-but-it-is-not-installed
