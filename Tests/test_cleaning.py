@@ -4,7 +4,6 @@ import pandas as pd
 data = pd.read_csv("Dataset/2019.csv")
 print(data.head(5))
 
-
 data.rename(columns={
     'Country or region': 'Countries',
     'Score': 'Happiness_Score',
@@ -19,6 +18,7 @@ print(data.info())
 
 
 
+### Test Methods Start Here ###
 def test_renaming():
 
     expected_columns = [

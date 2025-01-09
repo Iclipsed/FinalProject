@@ -7,6 +7,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 
+
+
+
+
+
+### Test Methods Start Here ###
 def test_residual_plot():
     # Load the dataset
     data = pd.read_csv("Dataset/2019.csv")

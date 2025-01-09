@@ -3,6 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
+
+
+
+### Test Methods Start Here ###
 def test_scatterplot():
     # Load the dataset
     data = pd.read_csv("Dataset/2019.csv")
