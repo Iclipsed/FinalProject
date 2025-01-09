@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the code and the relevant analyses for the project **"The Pursuit of Happiness: Understanding the Key Drivers of Well-being"** The research seeks to provide an insight into ways in which we can improve global happiness, through looking at regional trends and factors. By doing this, data-driven suggestions can guide the implementation of different policies; targeted and contextual interventions can be made by policmakers such as the UN to make the world a better place.
+This repository contains the code and the relevant analyses for the project **"The Pursuit of Happiness: Understanding the Key Drivers of Well-being"** The research seeks to provide an insight into ways in which we can improve global happiness, through looking at regional trends and factors. By doing this, data-driven suggestions can guide the implementation of different policies; targeted and contextual interventions can be made by policmakers such as the UN to make the world a happier place.
 
 ### Research Hypothesis
 
@@ -49,7 +49,7 @@ The repository is structured as follows:
 
 ## Dataset Information
 
-The analysis is based on a survey from the **World Happiness Report**, a yearly study conducted to understand why people are unhappy and where peopel are the most unhappy.
+The analysis is based on data from the **World Happiness Report**, an annual study that examines the factors contributing to happiness and identifies regions where people experience the most unhappiness.
 
 ### Source: 
 
@@ -69,7 +69,7 @@ cd FinalProject
 ```
 
 ### 2. Install Required Libraries
-Ensure you have Python installed (version 3.8+ is recommended). Install the required dependencies by running:
+Ensure you have Python installed (version 3.12.8 is recommended). Install the required dependencies by running:
 ```bash
 pip install -r requirements.txt
 ```
