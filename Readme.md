@@ -79,7 +79,7 @@ pip install -r requirements.txt
 - **Data Cleaning, Visualisations and Analysis**:  
   Execute the visualisation script in the `Graphs/` directory. Example:
   ```bash
-  python FinalProject/Graphs/Python_Analysis.py
+  python -m Graphs/Python_Analysis.py
   ```
 
 - **Tests**:  
